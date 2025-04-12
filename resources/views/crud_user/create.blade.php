@@ -30,6 +30,20 @@
                 <span class="text-danger">{{ $errors->first('password') }}</span>
                 @endif
             </div>
+            <div class="mb-4">
+                <label for="like" class="block text-gray-700">Like</label>
+                <input type="like" placeholder="Like" id="like" class="w-full px-3 py-2 border rounded" name="like" required>
+                @if ($errors->has('like'))
+                <span class="text-danger">{{ $errors->first('like') }}</span>
+                @endif
+            </div>
+            <div class="mb-4">
+                <label for="github" class="block text-gray-700">Github</label>
+                <input type="github" placeholder="Github" id="github" class="w-full px-3 py-2 border rounded" name="github" required>
+                @if ($errors->has('github'))
+                <span class="text-danger">{{ $errors->first('github') }}</span>
+                @endif
+            </div>
             <div class="mb-4 text-right">
                 <a href="{{ route('login') }}" class="text-blue-500">Đã có tài khoản</a>
             </div>
