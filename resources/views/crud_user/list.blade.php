@@ -14,6 +14,7 @@
                         <th class="border border-gray-300 px-4 py-2">Email</th>
                         <th class="border border-gray-300 px-4 py-2">Like</th>
                         <th class="border border-gray-300 px-4 py-2">Github</th>
+                        <th class="border border-gray-300 px-4 py-2">Profile</th>
                         <th class="border border-gray-300 px-4 py-2">Thao
                             tác</th>
                     </tr>
@@ -24,6 +25,9 @@
                             <td class="border border-gray-300 px-4 py-2 text-center">{{ $user->id }}</td>
                             <td class="border border-gray-300 px-4 py-2 text-center">{{ $user->name }}</td>
                             <td class="border border-gray-300 px-4 py-2 text-center">{{ $user->email }}</td>
+                            <td class="border border-gray-300 px-4 py-2 text-center">{{ $user->like }}</td>
+                            <td class="border border-gray-300 px-4 py-2 text-center">{{ $user->github }}</td>
+                            <td class="border border-gray-300 px-4 py-2 text-center">{{ $user->profile }}</td>
                             <td class="border border-gray-300 px-4 py-2 text-center">
                                 <a href="{{ route('user.updateUser', ['id' => $user->id]) }}" class="text-blue-500">Edit</a> |
                                 <a href="{{ route('user.readUser', ['id' => $user->id]) }}" class="text-blue-500">View</a> |

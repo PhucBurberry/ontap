@@ -55,8 +55,9 @@ class CrudUserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-            'like',
-            'github',
+            'like' =>'required',
+            'github' =>'required',
+            'profile' =>'required',
         ]);
 
         $data = $request->all();
@@ -64,8 +65,9 @@ class CrudUserController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'like',
-            'github'
+            'like' => $data['like'],
+            'github' => $data['github'],
+            'profile' => $data['profile'],
         ]);
 
         return redirect("login");
@@ -115,8 +117,9 @@ class CrudUserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,id,' . $input['id'],
             'password' => 'required|min:6',
-            'like',
-            'github',
+            'like' =>'required',
+            'github' =>'required',
+            'profile'=>'required',
         ]);
 
         $user = User::find($input['id']);
@@ -125,6 +128,7 @@ class CrudUserController extends Controller
         $user->password = $input['password'];
         $user->password = $input['like'];
         $user->password = $input['github'];
+        $user->password = $input['profile'];
         $user->save();
 
         return redirect("list")->withSuccess('You have signed-in');

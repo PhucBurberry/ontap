@@ -44,6 +44,13 @@
                 <span class="text-danger">{{ $errors->first('github') }}</span>
                 @endif
             </div>
+            <div class="mb-4">
+                <label for="profile" class="block text-gray-700">Profile</label>
+                <input type="profile" placeholder="Profile" id="profile" class="w-full px-3 py-2 border rounded" name="profile" required>
+                @if ($errors->has('profile'))
+                <span class="text-danger">{{ $errors->first('profile') }}</span>
+                @endif
+            </div>
             <div class="mb-4 text-right">
                 <a href="{{ route('login') }}" class="text-blue-500">Đã có tài khoản</a>
             </div>
